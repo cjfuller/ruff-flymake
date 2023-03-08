@@ -15,8 +15,8 @@
 ;; You must install ruff on your system in order to use this package.  By
 ;; default, it will run ruff from your path (as found by `executable-find`).
 ;; If ruff is not on your path or you want to run a specific version you can
-;; set the variable `ruff-executable` to the path for ruff that you want to
-;; use.
+;; set the variable `ruff-flymake-ruff-executable` to the path for ruff that
+;; you want to use.
 ;;
 ;; Loading this package does not automatically install the backend into
 ;; flymake; add it to the backends for python-mode in your init.el via:
@@ -88,7 +88,7 @@
   "Activate ruff-flymake as a backend for flymake.
 
   This is intended to be added to `python-mode-hook`."
-  (add-hook 'flymake-diagnostic-functions 'ruff-flymake-backend nil t))
+  (add-hook 'flymake-diagnostic-functions #'ruff-flymake-backend nil t))
 
 (provide 'ruff-flymake)
 ;;; ruff-flymake.el ends here
