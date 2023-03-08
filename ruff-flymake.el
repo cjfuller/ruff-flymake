@@ -76,7 +76,7 @@
                           for line = (string-to-number (match-string 1))
                           for col = (string-to-number (match-string 2))
                           for (beg . end) = (flymake-diag-region source-buffer line col)
-                          collect (flymake-make-diagnostic source-buffer beg end :error msg)
+                          collect (flymake-make-diagnostic source-buffer beg end :warning msg)
                           into diags
                           finally (funcall report-fn diags)))
                      (flymake-log :warning "Cancelling obsolete check %s" proc))
