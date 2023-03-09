@@ -27,7 +27,9 @@
 ;; output in your flymake diagnostics, put this in your init.el:
 ;; ```
 ;; (add-to-list 'eglot-stay-out-of 'flymake)
-;; (add-hook 'flymake-diagnostic-functions 'eglot-flymake-backend nil t)
+;; (defun activate-eglot-flymake-backend ()
+;;  (add-hook 'flymake-diagnostic-functions 'eglot-flymake-backend nil t))
+;; (add-hook 'eglot--managed-mode-hook #'activate-eglot-flymake-backend)
 ;; ```
 
 ;;; Code:
