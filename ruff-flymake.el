@@ -7,6 +7,7 @@
 ;; Keywords: tools
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "26.1"))
+;; SPDX-License-Identifier: MIT
 
 ;;; Commentary:
 
@@ -77,8 +78,8 @@
                           for msg = (match-string 3)
                           for line = (string-to-number (match-string 1))
                           for col = (string-to-number (match-string 2))
-                          for (beg . end) = (flymake-diag-region source-buffer line col)
-                          collect (flymake-make-diagnostic source-buffer beg end :warning msg)
+                          for region = (flymake-diag-region source-buffer line col)
+                          collect (flymake-make-diagnostic source-buffer (car region) (cdr region) :warning msg)
                           into diags
                           finally (funcall report-fn diags)))
                      (flymake-log :warning "Cancelling obsolete check %s" proc))
