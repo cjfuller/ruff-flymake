@@ -35,6 +35,9 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'cl-lib))
+
 (defvar ruff-flymake-ruff-executable nil
   "`ruff-flymake-rust-executable` is the path to the ruff binary.
 
