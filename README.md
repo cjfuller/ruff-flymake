@@ -8,8 +8,10 @@ language server with eglot.
 
 ## Installation
 
-The package is being submitted to MELPA, but for the time being, you'll need to
-install manually by putting the `ruff-flymake.el` file on your load path.
+You probably want to use
+[flymake-ruff](https://github.com/erickgnavar/flymake-ruff) instead, which is
+available in MELPA. If you really want to use this, one, you'll need to install
+manually by putting the `ruff-flymake.el` file on your load path.
 
 ## Setup
 
